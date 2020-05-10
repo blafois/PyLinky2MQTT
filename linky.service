@@ -1,0 +1,14 @@
+[Unit]
+Description=LINKY Daemon
+After=network.target
+
+[Service]
+ExecStart=/opt/linky/bin/python /opt/linky/linky.py
+User=root
+Group=root
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target network-online.target
